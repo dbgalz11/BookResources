@@ -1,6 +1,16 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
+}
+
 provider "azurerm" {
-  version         = "1.38.0"
-  subscription_id = var.subscriptionID
+  features {}
+  
+  subscription_id = "dab04ecd-6685-4029-ba36-20060b572be3"
 }
 
 resource "azurerm_virtual_machine" "NoBSDevVM" {
