@@ -15,17 +15,19 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: 'Part-I-Tools/Azure Pipelines/VM'
-    commandOptions: "-var 'subscriptionID=$(subscriptionID)' -var 'network_interface_id=$(network_interface_id)'"
-    backendServiceArm: 'phgdc-handson(dab04ecd-6685-4029-ba36-20060b572be3)'
+    commandOptions: '-var ''subscriptionID=$(subscriptionID)'' -var ''network_interface_id=$(network_interface_id)'''
+    backendServiceArm: 'phgdc-handson(5)(dab04ecd-6685-4029-ba36-20060b572be3)'
     backendAzureRmResourceGroupName: 'NoDBG'
     backendAzureRmStorageAccountName: 'dbgteststorage123'
     backendAzureRmContainerName: 'dbgcontainer'
     backendAzureRmKey: 'tf/terraform.tfstate'
-
+    
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
     command: 'apply'
     workingDirectory: 'Part-I-Tools/Azure Pipelines/VM'
-    commandOptions: "-var 'subscriptionID=$(subscriptionID)' -var 'network_interface_id=$(network_interface_id)'"
-    environmentServiceNameAzureRM: 'phgdc-handson(dab04ecd-6685-4029-ba36-20060b572be3)'
+    commandOptions: '-var ''subscriptionID=$(subscriptionID)'' -var ''network_interface_id=$(network_interface_id)'
+    environmentServiceNameAzureRM: 'phgdc-handson(6)(dab04ecd-6685-4029-ba36-20060b572be3)'
+
+
