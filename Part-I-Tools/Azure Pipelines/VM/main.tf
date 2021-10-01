@@ -10,7 +10,7 @@ terraform {
 provider "azurerm" {
   features {}
   
-  subscription_id = "dab04ecd-6685-4029-ba36-20060b572be3"
+  subscription_id = var.subscriptionID
 }
 
 resource "azurerm_virtual_machine" "NoBSDevVM" {
